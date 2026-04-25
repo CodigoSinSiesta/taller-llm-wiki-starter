@@ -18,9 +18,11 @@ grep "^## \[.*\] ingest" wiki/log.md           # solo ingestas
 ## [2026-04-25] setup | Esqueleto inicial desde el starter
 
 - Repo creado a partir de [`taller-llm-wiki-starter`](https://github.com/CodigoSinSiesta/taller-llm-wiki-starter).
-- Estructura de carpetas: `raw/`, `templates/`, `wiki/{identidad, comunidad,
-  proyectos, conceptos, herramientas, referencias, operativa, assets}/`.
-- `wiki/index.md` y `wiki/log.md` (este fichero) creados.
-- `AGENTS.md` listo para personalizar con tu perfil y dominio (`CLAUDE.md` es un wrapper que lo importa para Claude Code).
-- Pendiente: ingestar la primera fuente real desde `raw/` (ver
-  [ejercicios/02-primer-ingest.md](../ejercicios/02-primer-ingest.md)).
+- Estructura mínima de carpetas: `raw/`, `templates/` (con tres plantillas
+  universales `concepto`, `referencia`, `nota` + catálogo opcional en
+  `templates/opcionales/`), `wiki/` (con `index.md`, `log.md` y `assets/`).
+- `AGENTS.md` listo para personalizar tras la *Entrevista de finalidad*
+  (`CLAUDE.md` es un wrapper que lo importa para Claude Code).
+- **Pendiente**: hacer la *Entrevista de finalidad* del Ejercicio 1 para
+  decidir qué subcarpetas crear en `wiki/` y qué plantillas activar desde
+  `templates/opcionales/`.

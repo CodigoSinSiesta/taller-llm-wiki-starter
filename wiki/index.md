@@ -1,62 +1,49 @@
 # Índice del Wiki
 
-**Resumen**: Tabla de contenidos de tu baúl personal de conocimiento. Aquí cada
-página añadida aparece como una línea con descripción de una frase.
+**Resumen**: Tabla de contenidos de tu baúl personal de conocimiento. Aquí
+cada página añadida aparece como una línea con descripción de una frase.
 
 **Última actualización**: 2026-04-25 (esqueleto inicial del starter)
 
 ---
 
+> ⏳ **Este índice está vacío hasta que hagas la *Entrevista de finalidad***
+> (ver [`ejercicios/01-setup.md`](../ejercicios/01-setup.md), Paso 0). Tras
+> ella, el agente creará las subcarpetas que decidáis y las añadirá como
+> secciones aquí.
+
 Este índice enumera todas las páginas del wiki con una descripción de una
 línea. Se actualiza cada vez que se crea o renombra una página.
 
 > **¿Vas a crear una página nueva?** Parte de una plantilla en
-> [`../templates/`](../templates/) — hay una por `tipo`. Detalles en
+> [`../templates/`](../templates/) — hay tres universales (`concepto`,
+> `referencia`, `nota`) y un menú opcional en
+> [`../templates/opcionales/`](../templates/opcionales/). Detalles en
 > [`templates/README.md`](../templates/README.md).
 >
 > **¿Tu wiki ya pasa de 30 páginas en un dominio?** Considera crear un
 > *Map of Content* (`wiki/<dominio>.md`) que agrupe por sub-tema con queries
 > Dataview sobre los `tags:`.
 
-## Identidad
+## Páginas
 
-*(Vacío — añade tu perfil, trayectoria, stack y valores aquí.)*
-
-## Comunidad
-
-*(Vacío — renombra esta sección a tu dominio principal: cliente/, tesis/,
-producto/… si no encaja con "comunidad".)*
-
-## Proyectos
-
-*(Vacío — una página por proyecto o repo.)*
-
-## Conceptos
-
-*(Vacío — ideas reutilizables que aparezcan en varias páginas merecen las
-suyas propias.)*
-
-## Herramientas
-
-*(Vacío — tooling con página propia: editores, CLIs, plugins, servicios.)*
-
-## Referencias
-
-*(Vacío — artículos, papers, vídeos, libros que cites desde otras páginas.)*
-
-## Operativa
-
-*(Vacío — roadmap, banco de ideas, playbooks, ADRs.)*
+*(Vacío — añade páginas con la plantilla que toque y enuméralas aquí con una
+línea.)*
 
 ---
 
-## Categorías del wiki
+## Cómo se organizan las páginas
 
-- **identidad/** — quién eres: perfil, trayectoria, stack, valores,
-  certificaciones.
-- **comunidad/** — el dominio principal del wiki (renómbralo si no aplica).
-- **proyectos/** — una página por proyecto o repo.
-- **conceptos/** — ideas reutilizables entre páginas.
-- **herramientas/** — tooling con página propia.
-- **referencias/** — fuentes externas que citas (artículos, papers, casos).
-- **operativa/** — roadmap, ideas, playbooks, ADRs.
+El patrón LLM Wiki **no impone** una estructura concreta. Tras la entrevista
+de finalidad, esta sección listará las subcarpetas reales de tu wiki —
+podrían ser `wiki/recetas/`, `wiki/cliente-acme/`, `wiki/papers/`,
+`wiki/conceptos/`, `wiki/proyectos/`… o cualquier otra cosa que encaje con
+tu caso.
+
+Reglas universales que sí se mantienen:
+
+- Una **página = una idea**. Granularidad fina.
+- Si un concepto aparece en varias páginas, **una sola página** que las
+  demás enlazan con `[[wikilinks]]`.
+- Los nombres de página en minúscula y con guiones (p. ej.
+  `aprendizaje-automatico.md`).

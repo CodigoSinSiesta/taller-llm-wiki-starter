@@ -30,12 +30,14 @@ Léelo entero. Identifica:
 > fuente original y proponme un plan: qué páginas crearías o actualizarías
 > en `wiki/`, agrupadas por tema (no por fichero). No escribas nada todavía.
 
-El agente responde con un plan tipo:
+El agente responde con un plan adaptado a las **carpetas y plantillas que
+activaste en el Ejercicio 1**. Un ejemplo (las rutas concretas dependerán de
+tu finalidad):
 
 > Propongo:
-> 1. `wiki/conceptos/<concepto-1>.md` — definición + por qué importa.
-> 2. `wiki/conceptos/<concepto-2>.md` — definición + cómo se aplica.
-> 3. `wiki/herramientas/<herramienta-x>.md` — qué hace y cuándo usarla.
+> 1. `wiki/<tu-carpeta>/<concepto-1>.md` (plantilla `concepto`) — definición + por qué importa.
+> 2. `wiki/<tu-carpeta>/<concepto-2>.md` (plantilla `concepto`) — definición + cómo se aplica.
+> 3. `wiki/<otra-carpeta>/<entrada>.md` (plantilla `nota` o la opcional que activaste).
 > Fuente original: <URL>.
 
 ### 3. Itera el plan si hace falta
@@ -82,8 +84,8 @@ git commit -m "Ingest: ejemplo-articulo"
 
 ## Salida esperada
 
-`raw/` vacía. `wiki/conceptos/` y/o `wiki/herramientas/` con las primeras
-páginas reales. `wiki/index.md` y `wiki/log.md` actualizados. La estructura
-de tu wiki ya tiene **forma**.
+`raw/` vacía. Las subcarpetas que decidiste en el Ejercicio 1 con sus
+primeras páginas reales. `wiki/index.md` y `wiki/log.md` actualizados. La
+estructura de tu wiki ya tiene **contenido**.
 
 Sigue con [03-pregunta-y-archiva.md](03-pregunta-y-archiva.md).

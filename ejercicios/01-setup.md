@@ -1,9 +1,17 @@
-# Ejercicio 1 — Setup
+# Ejercicio 1 — Setup + Entrevista de finalidad
 
 **Objetivo**: dejar el repo abierto en Obsidian con los plugins correctos,
-`AGENTS.md` personalizado a tu perfil, y un primer `git commit` hecho.
+**la finalidad de tu wiki definida** con una entrevista guiada por el agente
+(estructura inicial decidida), y un primer `git commit` hecho.
 
-**Tiempo**: 15-20 min.
+**Tiempo**: 20-25 min.
+
+> ⚠️ **Importante**: este starter **no impone** una vertical. La estructura
+> de carpetas y las plantillas activas se deciden durante la entrevista del
+> Paso 0, no vienen pre-pobladas. Esto es deliberado — el patrón LLM Wiki
+> sirve para casos muy distintos (estudio, hobby, trabajo, investigación,
+> equipo…), y forzar una división específica termina forzándote a meter
+> contenido a calzador.
 
 ## Pasos
 
@@ -31,20 +39,21 @@ git remote remove origin
 2. Selecciona la carpeta `mi-wiki/`.
 3. Acepta confiar en el vault si te lo pregunta.
 
-Verás la estructura `raw/`, `templates/`, `wiki/` en la barra lateral.
+Verás `raw/`, `templates/` y `wiki/` (este último con solo `index.md`,
+`log.md` y `assets/`) en la barra lateral.
 
 ### 3. Activa los plugins recomendados
 
 - **Templates** (core): Settings → *Core plugins* → activa **Templates** →
   Settings → *Templates* → *Template folder location* = `templates`.
-- **Dataview** (community): Settings → *Community plugins* → desactiva el modo
-  restringido → busca **Dataview** → instalar y activar.
+- **Dataview** (community): Settings → *Community plugins* → desactiva el
+  modo restringido → busca **Dataview** → instalar y activar.
 
 Sin estos dos plugins el frontmatter funciona, pero pierdes la magia.
 
-### 4. Personaliza `AGENTS.md`
+### 4. Arranca tu agente
 
-Arranca tu agente en la raíz del repo. Ejemplos:
+Ejemplos:
 
 ```sh
 claude        # Claude Code
@@ -53,51 +62,82 @@ opencode      # OpenCode
 # o abre el chat de Copilot/Cursor en tu editor
 ```
 
-Pídele literalmente:
+### 5. ⭐ Paso 0 — Entrevista de finalidad
 
-> Lee `AGENTS.md` y la sección *Propósito*. Hazme 3-5 preguntas cortas para
-> rellenar `<TU NOMBRE>`, `<TU ROL>` y los frentes del wiki. Cuando tengas
-> las respuestas, edita `AGENTS.md` y borra esta misma cita explicativa del
-> starter. No toques nada más.
+Este es el paso clave. Pídele al agente literalmente:
 
-Responde a las preguntas. El agente actualiza `AGENTS.md` con tu información.
+> Lee `AGENTS.md` entero. Después hazme una *Entrevista de finalidad*: 4-6
+> preguntas cortas para entender para qué voy a usar este wiki. Quiero que
+> me preguntes por:
+>
+> 1. La finalidad principal (estudio, trabajo, hobby, investigación,
+>    documentación de cliente/equipo, mezcla de varios…).
+> 2. Qué tipos de fuentes voy a meter (artículos web, papers, vídeos,
+>    transcripciones, libros, notas propias, screenshots…).
+> 3. Si hay subdominios o categorías obvias dentro de mi finalidad
+>    (p. ej. si es estudio, qué asignaturas; si es trabajo, qué clientes o
+>    proyectos; si es hobby, qué facetas).
+> 4. Si hay alguna plantilla del catálogo `templates/opcionales/` que vaya
+>    a usar mucho.
+> 5. Cualquier convención propia que quiera mantener (idioma, naming, etc.).
+>
+> Cuando tengas mis respuestas, propóname:
+>
+> - **Qué subcarpetas** crear bajo `wiki/` (con nombres concretos basados en
+>   mis respuestas, no genéricos).
+> - **Qué plantillas opcionales** mover desde `templates/opcionales/` a
+>   `templates/` (si alguna). Si no hace falta ninguna, dilo.
+> - **Cualquier ajuste** del vocabulario controlado de tags al inicio de
+>   `templates/README.md`.
+>
+> No escribas nada todavía — solo el plan. Después de que lo apruebe, lo
+> ejecutas y actualizas la sección *Propósito* de `AGENTS.md` con mi
+> finalidad concreta (borrando la cita explicativa del starter y la nota
+> "Pendiente de rellenar"). Documéntalo todo en `wiki/log.md` como una
+> entrada `## [YYYY-MM-DD] setup | Entrevista de finalidad`.
 
-> ℹ️ Si tu agente es Claude Code, también lee `CLAUDE.md` automáticamente —
-> ese fichero solo contiene `@AGENTS.md`, así que importa el principal y no
-> necesitas tocarlo. Si tu agente usa otra convención (p. ej. Cursor con
-> `.cursor/rules/`), añade un puntero a `AGENTS.md` desde donde tu agente lo
-> lea.
+Responde a las preguntas. Itera el plan si algo no encaja:
 
-### 5. (Opcional) Renombra `comunidad/` si no aplica
+> El subdominio "X" la verdad es que también lo cubre "Y", funde las dos
+> carpetas.
+>
+> No quiero la plantilla "operativa" — yo no llevo roadmap formal.
 
-Si tu wiki no es comunitario, dile a tu agente:
+Cuando estés conforme, dale luz verde:
 
-> Renombra `wiki/comunidad/` a `wiki/<dominio>/` y actualiza las referencias
-> en `wiki/index.md`, `AGENTS.md` y `templates/comunidad.md` (incluido el
-> `tipo:` en su frontmatter). Documéntalo en `wiki/log.md` como una entrada
-> `meta`.
+> Adelante con el plan.
 
-Sustituye `<dominio>` por lo que aplique (`cliente`, `tesis`, `producto`,
-`hacienda`…). Si dudas, déjalo como está y renombra más adelante.
+### 6. (Opcional) Renombrar `wiki/comunidad/` ya no aplica
 
-### 6. Primer commit
+> ℹ️ En el starter actual no hay `wiki/comunidad/` ni ninguna carpeta
+> vertical pre-creada — todas se generan en el Paso 0 según tu finalidad.
+> Si ves que el agente ha creado alguna que no encaja, pídele que la
+> renombre o elimine.
+
+### 7. Primer commit
 
 ```sh
 git add .
-git commit -m "Personalizo AGENTS.md y arranco mi wiki"
+git commit -m "Setup inicial: AGENTS.md personalizado y estructura definida"
 ```
 
 ## Checklist
 
 - [ ] Repo abierto como vault en Obsidian.
 - [ ] Plugins Templates y Dataview activos.
-- [ ] `AGENTS.md` sin la cita explicativa del starter y con tu información.
-- [ ] (Opcional) `comunidad/` renombrada si no aplica.
+- [ ] *Entrevista de finalidad* completada con tu agente.
+- [ ] `wiki/` tiene subcarpetas con nombres concretos a tu caso.
+- [ ] `templates/` tiene activadas las plantillas que vas a usar.
+- [ ] `AGENTS.md` con la sección *Propósito* rellenada y sin la cita del
+      starter.
+- [ ] Entrada `setup | Entrevista de finalidad` en `wiki/log.md`.
 - [ ] Commit inicial hecho.
 
 ## Salida esperada
 
-Tu vault arrancado, `git log` con un commit por encima del setup inicial, y
-`AGENTS.md` que ya habla de **ti** y no del placeholder.
+Tu vault arrancado, `git log` con un commit por encima del setup inicial,
+`AGENTS.md` que ya describe **tu** finalidad concreta, y una estructura de
+carpetas + plantillas que encaja con cómo vas a usar el wiki — no genérica
+ni heredada del starter.
 
 Sigue con [02-primer-ingest.md](02-primer-ingest.md).

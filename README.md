@@ -2,11 +2,11 @@
 
 Repo de partida para el taller **LLM Wiki: tu baúl de conocimiento mantenido por tu agente de IA** ([Código Sin Siesta](https://codigosinsiesta.github.io)).
 
-Al final del taller te llevas tu propia wiki personal funcionando: estructura por categorías, plantillas con frontmatter YAML, flujo `raw/` → `wiki/` y `AGENTS.md` adaptado a tu perfil.
+Al final del taller te llevas tu propia wiki personal funcionando: estructura adaptada a **tu finalidad concreta** (no genérica), plantillas con frontmatter YAML, flujo `raw/` → `wiki/` y `AGENTS.md` personalizado.
 
 ## Inspiración
 
-Patrón **LLM Wiki** popularizado por Andrej Karpathy: markdown plano + LLM como redactor + humano como editor. Si quieres ver una wiki *llena* mantenida con este mismo starter, mira la organización [CodigoSinSiesta](https://github.com/CodigoSinSiesta) y la presentación [coding-agents-presentation](https://github.com/CodigoSinSiesta/coding-agents-presentation).
+Patrón **LLM Wiki** popularizado por Andrej Karpathy: markdown plano + LLM como redactor + humano como editor. Es un patrón **deliberadamente neutral**: sirve igual para apuntes de estudio, gestión de fuentes para una tesis, documentación de un cliente, memoria operativa de un equipo, hobby (cocina, fotografía, finanzas…) o knowledge base profesional. No impone qué debes guardar — el starter te guía a decidirlo en una *Entrevista de finalidad* al inicio.
 
 ## Requisitos
 
@@ -41,7 +41,9 @@ cd mi-wiki
 # 4. Arranca tu agente en la raíz del repo
 #    claude · codex · opencode · etc.
 
-# 5. Pídele que lea AGENTS.md y empieza por el primer ejercicio
+# 5. Haz la Entrevista de finalidad (Paso 0 del Ejercicio 1)
+#    El agente te pregunta para qué quieres el wiki y propone la
+#    estructura inicial — carpetas y plantillas — adaptada a tu caso.
 ```
 
 ## Estructura
@@ -51,25 +53,39 @@ taller-llm-wiki-starter/
 ├── AGENTS.md            -- instrucciones que lee tu agente al arrancar
 ├── CLAUDE.md            -- wrapper que importa AGENTS.md (para Claude Code)
 ├── README.md            -- este fichero
-├── templates/           -- una plantilla por `tipo` de página (NO tocar antes del taller)
+├── templates/           -- plantillas con frontmatter YAML
+│   ├── concepto.md      --   universal: idea reutilizable
+│   ├── referencia.md    --   universal: fuente externa
+│   ├── nota.md          --   universal: entrada genérica (la más flexible)
+│   ├── raw-fuente.md    --   formato esperado en raw/
+│   └── opcionales/      --   menú de plantillas verticales (proyecto,
+│                        --   herramienta, identidad, comunidad, operativa)
+│                        --   que activas durante la entrevista de finalidad
 ├── raw/                 -- bandeja de entrada efímera (incluye un ejemplo)
 ├── wiki/                -- páginas markdown que mantiene el agente
-│   ├── index.md         -- tabla de contenidos plana
-│   ├── log.md           -- registro append-only de operaciones
-│   └── <categorías>/    -- carpetas vacías listas para usar
+│   ├── index.md         --   tabla de contenidos plana
+│   ├── log.md           --   registro append-only de operaciones
+│   ├── assets/          --   imágenes y otros adjuntos
+│   └── <subcarpetas>    --   se crean tras la entrevista de finalidad
+│                        --   con nombres adaptados a tu caso
 └── ejercicios/          -- guía paso a paso del taller
 ```
+
+> ⚠️ A diferencia de muchos starters de wiki, **no hay subcarpetas
+> pre-creadas en `wiki/`** ni más plantillas activas que las tres
+> universales. Esto es deliberado — la estructura emerge de la *Entrevista
+> de finalidad* del Ejercicio 1, no se impone.
 
 ## Agenda del taller (90-120 min)
 
 | Bloque | Tiempo | Contenido |
 |--------|--------|-----------|
 | 0 | 10 min | Bienvenida + el problema del conocimiento que se evapora |
-| 1 | 15 min | Anatomía del wiki: categorías, frontmatter, MOCs, `raw/` efímera |
-| 2 | 10 min | Plantillas y vocabulario controlado de tags |
+| 1 | 15 min | Anatomía del wiki: piezas universales (frontmatter, MOCs, `raw/` efímera, index, log) |
+| 2 | 10 min | Plantillas universales + catálogo opcional + vocabulario de tags |
 | 3 | 15 min | Flujo de ingesta y regla de citación |
-| 4 | 20 min | **Hands-on 1** — [Setup](ejercicios/01-setup.md) + primer commit |
-| 5 | 30 min | **Hands-on 2** — [Primer ingest](ejercicios/02-primer-ingest.md) + [archivado de respuesta](ejercicios/03-pregunta-y-archiva.md) |
+| 4 | 25 min | **Hands-on 1** — [Setup + Entrevista de finalidad](ejercicios/01-setup.md) + primer commit |
+| 5 | 25 min | **Hands-on 2** — [Primer ingest](ejercicios/02-primer-ingest.md) + [archivado de respuesta](ejercicios/03-pregunta-y-archiva.md) |
 | 6 | 15 min | **Hands-on 3** (opcional, versión 120 min) — [Lint asistido](ejercicios/04-lint-asistido.md) |
 | 7 | 5 min | Cierre: takeaways + ingesta semanal de 30 min |
 
@@ -77,7 +93,7 @@ Si vas a ritmo cómodo, la versión 90 min cubre los hands-on 1 y 2. Los 30 min 
 
 ## Ejercicios
 
-1. [01-setup.md](ejercicios/01-setup.md) — clonar, configurar Obsidian, primer `git commit`.
+1. [01-setup.md](ejercicios/01-setup.md) — clonar, configurar Obsidian, **Entrevista de finalidad** con el agente, primer `git commit`.
 2. [02-primer-ingest.md](ejercicios/02-primer-ingest.md) — ingestar `raw/ejemplo-articulo.md` en 1-3 páginas conectadas.
 3. [03-pregunta-y-archiva.md](ejercicios/03-pregunta-y-archiva.md) — pregunta al wiki + archivar la respuesta como página.
 4. [04-lint-asistido.md](ejercicios/04-lint-asistido.md) — auditoría asistida (huérfanas, contradicciones, data gaps).

@@ -5,9 +5,10 @@ Code, Codex, OpenCode, Copilot, Cursor o el que prefieras), basada en el
 patrón **LLM Wiki** popularizado por Andrej Karpathy: markdown plano + LLM
 como redactor + humano como editor.
 
-> Este es el `AGENTS.md` del **starter** del taller. Cuando hagas tuyo el
-> repo, sustituye los placeholders `<TU NOMBRE>`, `<TU ROL>`, etc. en la
-> sección *Propósito*, y borra esta cita.
+> Este es el `AGENTS.md` del **starter** del taller. La sección *Propósito*
+> está intencionalmente vacía: el agente la rellenará contigo durante la
+> *Entrevista de finalidad* del Ejercicio 1. Cuando lo hagas, **borra esta
+> cita**.
 
 ## Compatibilidad de agentes
 
@@ -20,41 +21,52 @@ correspondiente con un puntero a `AGENTS.md` o copia su contenido.
 
 ## Propósito
 
-Este wiki es el baúl de conocimiento personal de **`<TU NOMBRE>`**. Cubre los
-frentes que tú decidas. Una división razonable para empezar:
+> ⏳ Pendiente de rellenar tras la *Entrevista de finalidad* (ver
+> [`ejercicios/01-setup.md`](ejercicios/01-setup.md), Paso 0).
 
-1. **Identidad profesional** — quién eres, trayectoria, stack, valores.
-2. **Dominio principal** — el área en la que trabajas (proyectos cliente, una
-   comunidad, un producto, una tesis…).
-3. **Operativa** — roadmap, ideas, playbooks, decisiones.
+El patrón LLM Wiki es **deliberadamente neutral en cuanto a contenido**: sirve
+igual de bien para apuntes de estudio, gestión de fuentes para una tesis,
+documentación de un cliente, memoria operativa de un equipo, hobby (cocina,
+fotografía, música, finanzas personales…), investigación o knowledge base
+profesional. No impone qué debe contener.
 
-El agente mantiene el wiki. La persona usuaria aporta las fuentes, hace
-preguntas y guía el análisis.
+Por eso, **antes de empezar**, el agente y tú decidiréis juntos:
+
+- Para qué vas a usar este wiki (la **finalidad**).
+- Qué tipo de fuentes vas a meter (artículos, vídeos, libros, transcripts,
+  notas propias, screenshots…).
+- Qué estructura inicial le viene bien (qué carpetas crear en `wiki/`, qué
+  plantillas activar desde `templates/opcionales/`).
+
+Tras la entrevista, el agente actualiza esta sección con tu finalidad concreta
+y crea las carpetas + activa las plantillas necesarias. **Borra esta cita
+explicativa** y la nota "Pendiente de rellenar".
 
 ## Estructura de carpetas
 
 ```
 raw/                    -- bandeja de entrada efímera (se eliminan tras ingestar)
-templates/              -- plantillas por tipo de página — usar SIEMPRE al crear una página nueva
+templates/              -- plantillas universales para crear páginas nuevas
+templates/opcionales/   -- plantillas verticales (mover a templates/ si encajan con tu finalidad)
 wiki/                   -- páginas markdown mantenidas por el agente
 wiki/index.md           -- tabla de contenidos plana de todo el wiki
 wiki/log.md             -- registro de solo adición con todas las operaciones
-wiki/identidad/         -- perfil, trayectoria, stack, valores, certificaciones
-wiki/comunidad/         -- (renombra a tu dominio si aplica) misión, marca, audiencia
-wiki/proyectos/         -- una página por proyecto/repo
-wiki/conceptos/         -- ideas reutilizables (definiciones, frameworks, patrones)
-wiki/herramientas/      -- tooling con página propia
-wiki/referencias/       -- estudios externos, artículos y casos de estudio citados
-wiki/operativa/         -- roadmap, ideas, playbooks, decisiones
+wiki/assets/            -- imágenes y otros adjuntos referenciados desde páginas
 ```
+
+> ⏳ Las **subcarpetas temáticas** de `wiki/` (p. ej. `wiki/conceptos/`,
+> `wiki/recetas/`, `wiki/cliente-acme/`, `wiki/papers/`…) se crean **tras**
+> la entrevista de finalidad, no vienen pre-pobladas. Esto evita imponer una
+> vertical que igual no encaja con tu caso.
 
 **Reglas de categorización**:
 
-- Un concepto reutilizable entre varios proyectos va en `conceptos/`, no
-  duplicado en cada proyecto.
-- Si una carpeta no encaja con tu dominio, **renómbrala** o sustitúyela. Por
-  ejemplo, `comunidad/` puede pasar a `cliente/`, `tesis/`, `producto/`, etc.
-  Ajusta también las plantillas y este `AGENTS.md` si lo haces.
+- Una **página = una idea**. Granularidad fina: si una página empieza a
+  cubrir dos cosas, divídela.
+- Si un mismo concepto aparecería en varias páginas (definición, historia,
+  aplicaciones), **una sola página** que las demás enlazan con `[[wikilinks]]`.
+- El nombre de las subcarpetas lo decides tú durante la entrevista de
+  finalidad. No hay carpetas obligatorias más allá del esqueleto anterior.
 
 ## Flujo de ingesta
 
@@ -89,16 +101,20 @@ queda traza del fichero raw intermedio.
 **Antes de crear una página nueva, parte siempre de la plantilla del tipo
 correcto en `templates/`** (ver [`templates/README.md`](templates/README.md)).
 
-Hay una plantilla por valor de `tipo`:
+El starter trae **tres plantillas universales** que sirven para casi cualquier
+caso de uso:
 
-- `templates/concepto.md` → `wiki/conceptos/`
-- `templates/herramienta.md` → `wiki/herramientas/`
-- `templates/proyecto.md` → `wiki/proyectos/`
-- `templates/identidad.md` → `wiki/identidad/`
-- `templates/comunidad.md` → `wiki/comunidad/`
-- `templates/referencia.md` → `wiki/referencias/`
-- `templates/operativa.md` → `wiki/operativa/`
-- `templates/raw-fuente.md` → documenta el formato esperado en `raw/`
+- `templates/concepto.md` → idea reutilizable que merece su propia página.
+- `templates/referencia.md` → fuente externa que citas desde varias páginas
+  (artículo, paper, vídeo, libro).
+- `templates/nota.md` → entrada genérica cuando ni "concepto" ni "referencia"
+  encajan. La más flexible.
+
+Y un catálogo de **plantillas opcionales** en
+[`templates/opcionales/`](templates/opcionales/) que el agente recomienda
+mover a `templates/` durante la entrevista de finalidad si encajan con tu
+caso (proyecto, herramienta, identidad, comunidad/marca, operativa…). Si en
+algún momento posterior necesitas una más, simplemente muévela.
 
 Si abres una plantilla y no usas algún hueco, **borra los `<!-- TODO -->` y
 los placeholders sin rellenar** — no los dejes flotando en la página final.
@@ -113,7 +129,7 @@ consultarlos.
 
 ```markdown
 ---
-tipo: concepto                    # concepto | herramienta | proyecto | identidad | comunidad | referencia | operativa
+tipo: concepto                    # del catálogo de plantillas activas
 resumen: "Una o dos frases que describen esta página."
 fuentes:
   - nombre: "Nombre legible"
@@ -136,7 +152,8 @@ Enlaza con conceptos relacionados usando [[enlaces-wiki]] a lo largo del texto.
 
 **Reglas del frontmatter**:
 
-- `tipo` debe coincidir con la carpeta (`conceptos/` → `tipo: concepto`).
+- `tipo` debe coincidir con la plantilla usada (`concepto`, `referencia`,
+  `nota`, o cualquier opcional que hayáis activado).
 - `actualizado` en formato ISO `YYYY-MM-DD`; actualízalo en cada edición.
 - `fuentes` es una lista de objetos `{nombre, url}`. Nunca apunta a un fichero
   `raw/`.
@@ -151,9 +168,9 @@ Enlaza con conceptos relacionados usando [[enlaces-wiki]] a lo largo del texto.
 ## Map of Content (MOCs)
 
 Cuando un dominio acumule >10 páginas, considera crear un **Map of Content**
-temático en `wiki/<dominio>.md` (p. ej. `wiki/ia.md`, `wiki/hacienda.md`,
-`wiki/cliente-acme.md`) que agrupe el contenido por sub-tema usando los
-`tags:` del frontmatter.
+temático en `wiki/<dominio>.md` (p. ej. `wiki/recetas.md`,
+`wiki/proyectos.md`, `wiki/cliente-acme.md`) que agrupe el contenido por
+sub-tema usando los `tags:` del frontmatter.
 
 Reglas de los MOCs:
 
@@ -218,3 +235,5 @@ Cuando el usuario te pida hacer lint o auditar el wiki:
   `aprendizaje-automatico.md`).
 - Escribe en un lenguaje claro y sencillo.
 - Si tienes dudas sobre cómo categorizar algo, pregunta al usuario.
+- **No impongas estructura**: si el usuario no ha hecho aún la entrevista de
+  finalidad, propón hacerla antes de crear carpetas o activar plantillas.
