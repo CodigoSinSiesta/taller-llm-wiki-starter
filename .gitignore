@@ -1,0 +1,19 @@
+.DS_Store
+.Trash-*/
+
+# Obsidian cache and local UI state
+.obsidian/cache/
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Plugin-local machine state
+.obsidian/plugins/*/data.json
+
+# Vault trash
+.trash/
+
+# Claude Code worktrees y estado local del agente
+.claude/
+
+# Outputs locales de herramientas externas (Graphify, etc.)
+.graphify/
