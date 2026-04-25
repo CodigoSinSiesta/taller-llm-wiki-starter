@@ -56,13 +56,27 @@ Si te parece poco o demasiado:
 
 El agente crea las páginas. Revisa con `git diff` lo que ha escrito.
 
-### 5. Elimina el fichero raw
+### 5. Aplica la política de `raw/` que decidiste
 
-Cuando estés conforme con las páginas:
+Cuando estés conforme con las páginas, dile al agente que aplique la
+*Política de raw/* acordada en el Ejercicio 1:
 
-> Elimina `raw/ejemplo-articulo.md` y confirma que la entrada del log
-> registra el nombre del fichero raw, la fuente original y las páginas
+> Aplica la política de raw/ que dejamos en AGENTS.md sobre
+> `raw/ejemplo-articulo.md` y confirma que la entrada del log registra el
+> nombre del fichero raw, la fuente original y las páginas
 > creadas/actualizadas.
+
+Según hayas decidido en la *Entrevista de finalidad*:
+
+- **Conservar** → el fichero se queda en `raw/`. La salida esperada de este
+  ejercicio mantiene `raw/ejemplo-articulo.md` ahí.
+- **Archivar** → el fichero se mueve a `raw/_archived/2026/`.
+- **Eliminar** → el fichero se borra (esta es la única opción donde `raw/`
+  queda totalmente vacía tras el ejercicio).
+
+> ℹ️ Si no decidiste política o no recuerdas cuál era, vale lo que diga la
+> sección *Política de raw/* de `AGENTS.md`. Si está pendiente de rellenar,
+> vuelve un momento al Ejercicio 1.
 
 ### 6. Commit
 
@@ -75,17 +89,27 @@ git commit -m "Ingest: ejemplo-articulo"
 
 - [ ] 1-3 páginas nuevas en `wiki/` con frontmatter YAML completo.
 - [ ] Cada página enlaza con al menos otra usando `[[wikilinks]]`.
-- [ ] Las citas a la fuente apuntan a la URL externa, **nunca** al fichero
-      `raw/`.
+- [ ] Las citas a la fuente apuntan a la URL externa
+      (`https://example.com/...` del frontmatter del raw), **nunca** al
+      fichero `raw/`.
 - [ ] `wiki/index.md` listando las páginas nuevas.
 - [ ] Entrada `## [YYYY-MM-DD] ingest | …` en `wiki/log.md`.
-- [ ] `raw/ejemplo-articulo.md` eliminado.
+- [ ] `raw/ejemplo-articulo.md` tratado según tu *Política de raw/*
+      (conservado, archivado o eliminado — coherente con `AGENTS.md`).
 - [ ] Commit hecho.
 
 ## Salida esperada
 
-`raw/` vacía. Las subcarpetas que decidiste en el Ejercicio 1 con sus
-primeras páginas reales. `wiki/index.md` y `wiki/log.md` actualizados. La
-estructura de tu wiki ya tiene **contenido**.
+Las subcarpetas que decidiste en el Ejercicio 1 con sus primeras páginas
+reales. `wiki/index.md` y `wiki/log.md` actualizados. La estructura de tu
+wiki ya tiene **contenido**.
+
+El estado de `raw/` depende de tu política:
+
+- *Conservar* → `raw/ejemplo-articulo.md` sigue ahí (la fuente externa real
+  es la que se cita, no el fichero, así que mantenerlo solo es un archivo
+  personal).
+- *Archivar* → el fichero está en `raw/_archived/2026/`.
+- *Eliminar* → `raw/` queda vacía.
 
 Sigue con [03-pregunta-y-archiva.md](03-pregunta-y-archiva.md).

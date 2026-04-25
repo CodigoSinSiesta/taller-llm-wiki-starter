@@ -66,20 +66,30 @@ opencode      # OpenCode
 
 Este es el paso clave. Pídele al agente literalmente:
 
-> Lee `AGENTS.md` entero. Después hazme una *Entrevista de finalidad*: 4-6
+> Lee `AGENTS.md` entero. Después hazme una *Entrevista de finalidad*: 5-7
 > preguntas cortas para entender para qué voy a usar este wiki. Quiero que
 > me preguntes por:
 >
 > 1. La finalidad principal (estudio, trabajo, hobby, investigación,
 >    documentación de cliente/equipo, mezcla de varios…).
 > 2. Qué tipos de fuentes voy a meter (artículos web, papers, vídeos,
->    transcripciones, libros, notas propias, screenshots…).
-> 3. Si hay subdominios o categorías obvias dentro de mi finalidad
+>    transcripciones, libros, **notas propias, conversaciones de chat**,
+>    screenshots…).
+> 3. **Política de `raw/`**: ¿qué quiero que pases con los ficheros tras
+>    ingestar? Las opciones son:
+>    - *Conservar* (recomendado por defecto, ideal si voy a meter notas
+>      propias o conversaciones que quiero mantener como archivo personal).
+>    - *Archivar* (mover a `raw/_archived/<año>/`).
+>    - *Eliminar* (solo si la fuente es externa y recuperable, p. ej. URLs
+>      públicas).
+>    Puedo también escoger una política mixta — p. ej. conservar todo
+>    salvo cuando indique lo contrario en una ingesta concreta.
+> 4. Si hay subdominios o categorías obvias dentro de mi finalidad
 >    (p. ej. si es estudio, qué asignaturas; si es trabajo, qué clientes o
 >    proyectos; si es hobby, qué facetas).
-> 4. Si hay alguna plantilla del catálogo `templates/opcionales/` que vaya
+> 5. Si hay alguna plantilla del catálogo `templates/opcionales/` que vaya
 >    a usar mucho.
-> 5. Cualquier convención propia que quiera mantener (idioma, naming, etc.).
+> 6. Cualquier convención propia que quiera mantener (idioma, naming, etc.).
 >
 > Cuando tengas mis respuestas, propóname:
 >
@@ -87,14 +97,18 @@ Este es el paso clave. Pídele al agente literalmente:
 >   mis respuestas, no genéricos).
 > - **Qué plantillas opcionales** mover desde `templates/opcionales/` a
 >   `templates/` (si alguna). Si no hace falta ninguna, dilo.
+> - **Qué política de `raw/`** dejarás registrada en `AGENTS.md`.
 > - **Cualquier ajuste** del vocabulario controlado de tags al inicio de
 >   `templates/README.md`.
 >
 > No escribas nada todavía — solo el plan. Después de que lo apruebe, lo
-> ejecutas y actualizas la sección *Propósito* de `AGENTS.md` con mi
-> finalidad concreta (borrando la cita explicativa del starter y la nota
-> "Pendiente de rellenar"). Documéntalo todo en `wiki/log.md` como una
-> entrada `## [YYYY-MM-DD] setup | Entrevista de finalidad`.
+> ejecutas y actualizas:
+> - La sección *Propósito* de `AGENTS.md` con mi finalidad concreta.
+> - La sección *Política de raw/* de `AGENTS.md` con la opción escogida.
+> - Borra ambas notas "Pendiente de rellenar" y la cita explicativa del
+>   starter.
+> Documéntalo todo en `wiki/log.md` como una entrada
+> `## [YYYY-MM-DD] setup | Entrevista de finalidad`.
 
 Responde a las preguntas. Itera el plan si algo no encaja:
 
@@ -128,8 +142,8 @@ git commit -m "Setup inicial: AGENTS.md personalizado y estructura definida"
 - [ ] *Entrevista de finalidad* completada con tu agente.
 - [ ] `wiki/` tiene subcarpetas con nombres concretos a tu caso.
 - [ ] `templates/` tiene activadas las plantillas que vas a usar.
-- [ ] `AGENTS.md` con la sección *Propósito* rellenada y sin la cita del
-      starter.
+- [ ] `AGENTS.md` con la sección *Propósito* rellenada y la *Política de
+      raw/* decidida (sin las notas "Pendiente de rellenar").
 - [ ] Entrada `setup | Entrevista de finalidad` en `wiki/log.md`.
 - [ ] Commit inicial hecho.
 

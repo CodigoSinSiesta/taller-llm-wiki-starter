@@ -61,7 +61,9 @@ taller-llm-wiki-starter/
 │   └── opcionales/      --   menú de plantillas verticales (proyecto,
 │                        --   herramienta, identidad, comunidad, operativa)
 │                        --   que activas durante la entrevista de finalidad
-├── raw/                 -- bandeja de entrada efímera (incluye un ejemplo)
+├── raw/                 -- bandeja de entrada (incluye un ejemplo). Política de
+│                        --   conservar/archivar/eliminar la decides en la
+│                        --   Entrevista de finalidad. Por defecto: conservar.
 ├── wiki/                -- páginas markdown que mantiene el agente
 │   ├── index.md         --   tabla de contenidos plana
 │   ├── log.md           --   registro append-only de operaciones

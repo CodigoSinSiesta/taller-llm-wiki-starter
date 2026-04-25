@@ -23,6 +23,10 @@ grep "^## \[.*\] ingest" wiki/log.md           # solo ingestas
   `templates/opcionales/`), `wiki/` (con `index.md`, `log.md` y `assets/`).
 - `AGENTS.md` listo para personalizar tras la *Entrevista de finalidad*
   (`CLAUDE.md` es un wrapper que lo importa para Claude Code).
+- **Política de raw/**: pendiente de decidir en la entrevista. Por defecto el
+  starter recomienda *conservar* (los ficheros de `raw/` no se eliminan
+  tras ingestar — útil para notas propias y transcripciones que quieras
+  mantener como archivo personal).
 - **Pendiente**: hacer la *Entrevista de finalidad* del Ejercicio 1 para
-  decidir qué subcarpetas crear en `wiki/` y qué plantillas activar desde
-  `templates/opcionales/`.
+  decidir qué subcarpetas crear en `wiki/`, qué plantillas activar desde
+  `templates/opcionales/` y qué política de raw/ aplicar.

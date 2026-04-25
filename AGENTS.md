@@ -45,7 +45,7 @@ explicativa** y la nota "Pendiente de rellenar".
 ## Estructura de carpetas
 
 ```
-raw/                    -- bandeja de entrada efímera (se eliminan tras ingestar)
+raw/                    -- bandeja de entrada (política configurable, ver más abajo)
 templates/              -- plantillas universales para crear páginas nuevas
 templates/opcionales/   -- plantillas verticales (mover a templates/ si encajan con tu finalidad)
 wiki/                   -- páginas markdown mantenidas por el agente
@@ -73,13 +73,19 @@ wiki/assets/            -- imágenes y otros adjuntos referenciados desde págin
 Cuando el usuario añada una nueva fuente a `raw/` y te pida que la ingestes:
 
 1. Lee el documento fuente completo.
-2. **Identifica la fuente original** (URL, artículo, repo, etc.) — el fichero
-   en `raw/` es solo un contenedor efímero.
+2. **Identifica la fuente original** si la hay (URL, artículo, repo, libro,
+   conversación con persona X en fecha Y, transcripción de chat propio…).
+   Si la fuente *es* el propio fichero (notas propias, ideas en bruto), el
+   fichero raw cuenta como fuente y debes registrarlo en consecuencia.
 3. Comenta los puntos clave con el usuario antes de escribir nada.
 4. Crea o actualiza páginas de `wiki/` agrupadas **por tema**, no por fichero.
    Una sola fuente puede afectar a varias páginas — es normal.
-5. En cada página, cita la **fuente original** (no el fichero `raw/`) tanto en
-   `fuentes:` del frontmatter como en las citas en cuerpo `(fuente: …)`.
+5. En cada página, cita la **fuente original**:
+   - Si es externa (URL, repo, artículo, libro): `fuentes:` apunta a la URL
+     real, **nunca** al fichero `raw/`. Citas en cuerpo: `(fuente: …)`.
+   - Si la fuente es el propio fichero raw (notas propias): `fuentes:` puede
+     apuntar a `raw/<fichero>` o a una nota propia indicando contexto. Esto
+     solo aplica si la *Política de raw/* es **conservar** o **archivar**.
 6. Añade enlaces wiki (`[[nombre-de-pagina]]`) para conectar páginas
    relacionadas.
 7. Actualiza `wiki/index.md` con las páginas nuevas y una descripción de una
@@ -88,13 +94,44 @@ Cuando el usuario añada una nueva fuente a `raw/` y te pida que la ingestes:
    `## [YYYY-MM-DD] tipo | Título` (tipos: `setup`, `ingest`, `refactor`,
    `lint`, `meta`), incluyendo nombre del fichero raw, fuente original y qué
    ha cambiado.
-9. **Elimina el archivo original de `raw/`** una vez completada la ingesta y
-   registrado el cambio en el log.
+9. **Aplica la *Política de raw/*** acordada en la Entrevista de finalidad
+   (ver siguiente sección).
 
-**Regla de citación**: las páginas del wiki **nunca** referencian ficheros de
-`raw/`. `raw/` es una bandeja efímera; la cita debe apuntar a la fuente
-externa real (URL, repo, artículo, libro). El `log.md` es el único sitio donde
-queda traza del fichero raw intermedio.
+## Política de raw/
+
+`raw/` **no es una bandeja efímera por defecto**. Cómo se trata cada fichero
+tras ingestar lo decide el usuario en la Entrevista de finalidad del
+Ejercicio 1. Hay tres opciones:
+
+- **Conservar (recomendado por defecto)** — el fichero raw se queda donde
+  está. Ideal si tiene valor histórico o lo quieres releer/reanalizar:
+  notas propias, transcripciones de conversaciones, PDFs de referencia,
+  capturas… Las páginas del wiki citan la fuente original cuando sea
+  externa, o el propio fichero raw cuando sea producción propia.
+- **Archivar** — el fichero raw se mueve a `raw/_archived/<año>/` (o el
+  patrón que decidáis) tras ingestar. Lo mantiene accesible pero fuera del
+  flujo activo de la bandeja. Útil si quieres tener histórico sin
+  contaminar `raw/`.
+- **Eliminar (efímero)** — el fichero raw se borra tras ingestar. Solo
+  apropiado cuando la fuente real es **externa y recuperable** (URL pública,
+  repo, libro) y el fichero raw era solo un contenedor de paso. Nunca para
+  notas propias o transcripciones únicas.
+
+La política decidida queda documentada al final de esta sección tras la
+entrevista, con una frase del estilo: "Política de raw/ acordada
+2026-04-25: **conservar** por defecto, salvo cuando se indique lo contrario
+en la conversación de ingesta".
+
+**Reglas que se mantienen siempre**, independientemente de la política:
+
+- El `log.md` registra qué fichero raw produjo qué páginas (auditable).
+- Cuando la fuente sea externa (URL, repo, libro), las páginas citan **esa
+  fuente**, no el fichero raw — incluso si decides conservar el raw como
+  archivo personal.
+- El usuario puede sobreescribir la política caso a caso ("este lo borras
+  tras ingestar", "este me lo guardas en archivo").
+
+> ⏳ Pendiente de rellenar tras la *Entrevista de finalidad*.
 
 ## Plantillas
 
@@ -224,8 +261,9 @@ Cuando el usuario te pida hacer lint o auditar el wiki:
 
 ## Reglas
 
-- Las fuentes en `raw/` son **efímeras**: se leen, se ingestan, se registran
-  en el log y se eliminan. No se modifican ni se editan en su lugar.
+- Los ficheros en `raw/` no se modifican ni se editan en su lugar — solo se
+  leen para ingestar. Tras la ingesta, aplica la *Política de raw/* acordada
+  con el usuario (conservar / archivar / eliminar).
 - Actualiza siempre `wiki/index.md` y `wiki/log.md` después de cada cambio.
   En `log.md`, cada entrada empieza por `## [YYYY-MM-DD] tipo | Título` para
   permitir `grep "^## \[" wiki/log.md | tail`.
@@ -237,3 +275,6 @@ Cuando el usuario te pida hacer lint o auditar el wiki:
 - Si tienes dudas sobre cómo categorizar algo, pregunta al usuario.
 - **No impongas estructura**: si el usuario no ha hecho aún la entrevista de
   finalidad, propón hacerla antes de crear carpetas o activar plantillas.
+- **No elimines ficheros de `raw/` por iniciativa propia** salvo que la
+  política acordada sea "eliminar" o el usuario te lo pida explícitamente
+  para un fichero concreto.
