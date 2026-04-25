@@ -7,11 +7,11 @@
 **Tiempo**: 20-25 min.
 
 > ⚠️ **Importante**: este starter **no impone** una vertical. La estructura
-> de carpetas y las plantillas activas se deciden durante la entrevista del
-> Paso 0, no vienen pre-pobladas. Esto es deliberado — el patrón LLM Wiki
-> sirve para casos muy distintos (estudio, hobby, trabajo, investigación,
-> equipo…), y forzar una división específica termina forzándote a meter
-> contenido a calzador.
+> de carpetas, las plantillas activas y la política de `raw/` se deciden
+> durante la *Entrevista de finalidad*, no vienen pre-pobladas. Esto es
+> deliberado — el patrón LLM Wiki sirve para casos muy distintos (estudio,
+> hobby, trabajo, investigación, equipo…), y forzar una división específica
+> termina forzándote a meter contenido a calzador.
 
 ## Pasos
 
@@ -51,7 +51,27 @@ Verás `raw/`, `templates/` y `wiki/` (este último con solo `index.md`,
 
 Sin estos dos plugins el frontmatter funciona, pero pierdes la magia.
 
-### 4. Arranca tu agente
+### 4. (Recomendado) Instala el Web Clipper en tu navegador
+
+Web Clipper es la extensión oficial de Obsidian que clippea cualquier
+artículo, paper o post de blog directamente a tu vault como markdown con
+frontmatter ya formado. Es **el feed natural de `raw/`** — sin él, cada
+ingesta empieza con un copy-paste manual.
+
+Instálala desde [obsidian.md/clipper](https://obsidian.md/clipper) (Chrome,
+Brave, Arc, Firefox, Safari, Edge, Vivaldi). Tras la instalación, en sus
+ajustes:
+
+1. Apunta el vault al repo que acabas de abrir (`mi-wiki/`).
+2. **Default folder** = `raw/`. Así todo lo que clippes cae directamente en
+   la bandeja de entrada lista para ingestar.
+3. Configura un atajo de teclado (sugerencia: `Cmd/Ctrl+Shift+O`) para
+   clippear sin tocar el ratón.
+
+> Si tu wiki no se va a alimentar de internet (notas propias, hobby
+> offline, transcripciones de voz…), puedes saltarte este paso.
+
+### 5. Arranca tu agente
 
 Ejemplos:
 
@@ -62,7 +82,7 @@ opencode      # OpenCode
 # o abre el chat de Copilot/Cursor en tu editor
 ```
 
-### 5. ⭐ Paso 0 — Entrevista de finalidad
+### 6. ⭐ Entrevista de finalidad
 
 Este es el paso clave. Pídele al agente literalmente:
 
@@ -121,13 +141,6 @@ Cuando estés conforme, dale luz verde:
 
 > Adelante con el plan.
 
-### 6. (Opcional) Renombrar `wiki/comunidad/` ya no aplica
-
-> ℹ️ En el starter actual no hay `wiki/comunidad/` ni ninguna carpeta
-> vertical pre-creada — todas se generan en el Paso 0 según tu finalidad.
-> Si ves que el agente ha creado alguna que no encaja, pídele que la
-> renombre o elimine.
-
 ### 7. Primer commit
 
 ```sh
@@ -139,6 +152,7 @@ git commit -m "Setup inicial: AGENTS.md personalizado y estructura definida"
 
 - [ ] Repo abierto como vault en Obsidian.
 - [ ] Plugins Templates y Dataview activos.
+- [ ] (Recomendado) Web Clipper instalado y apuntando a `raw/` del vault.
 - [ ] *Entrevista de finalidad* completada con tu agente.
 - [ ] `wiki/` tiene subcarpetas con nombres concretos a tu caso.
 - [ ] `templates/` tiene activadas las plantillas que vas a usar.

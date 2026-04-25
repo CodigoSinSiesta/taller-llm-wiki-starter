@@ -18,6 +18,7 @@ Patrón **LLM Wiki** popularizado por Andrej Karpathy: markdown plano + LLM como
   - [Cursor](https://cursor.com) — añade `.cursor/rules/agents.mdc` apuntando a `AGENTS.md`.
   - Cualquier otro agente que sepa leer ficheros markdown del workspace.
 - [Obsidian](https://obsidian.md/) (gratis) para visualizar el vault.
+- [Obsidian Web Clipper](https://obsidian.md/clipper) (extensión de navegador, recomendado) — captura artículos web directamente en `raw/` como markdown con frontmatter YAML, sin pasar por copy-paste. Disponible para Chrome/Brave/Arc/Edge/Vivaldi, Firefox y Safari.
 - Git.
 - (Opcional) Node.js ≥ 20 si quieres añadir scripts de validación.
 
