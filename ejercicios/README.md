@@ -12,11 +12,13 @@ Hazlos en orden — cada uno asume el anterior.
 
 ## Cómo usarlos
 
-- Cada ejercicio dice **qué pedirle a Claude Code** literalmente. Copia y pega
-  los prompts entre comillas.
+- Cada ejercicio dice **qué pedirle a tu agente** literalmente. Copia y pega
+  los prompts entre comillas. Funcionan igual con Claude Code, Codex,
+  OpenCode, Copilot o Cursor — el lenguaje natural no cambia.
 - El resultado de cada ejercicio queda comprometido en git, así puedes ver el
-  diff de lo que Claude ha escrito y aprender del patrón.
-- Si te atascas, lee el `CLAUDE.md` del repo — Claude lo está mirando también.
+  diff de lo que el agente ha escrito y aprender del patrón.
+- Si te atascas, lee el `AGENTS.md` del repo — tu agente lo está mirando
+  también.
 
 ## Después
 

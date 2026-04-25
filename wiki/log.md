@@ -21,6 +21,6 @@ grep "^## \[.*\] ingest" wiki/log.md           # solo ingestas
 - Estructura de carpetas: `raw/`, `templates/`, `wiki/{identidad, comunidad,
   proyectos, conceptos, herramientas, referencias, operativa, assets}/`.
 - `wiki/index.md` y `wiki/log.md` (este fichero) creados.
-- `CLAUDE.md` listo para personalizar con tu perfil y dominio.
+- `AGENTS.md` listo para personalizar con tu perfil y dominio (`CLAUDE.md` es un wrapper que lo importa para Claude Code).
 - Pendiente: ingestar la primera fuente real desde `raw/` (ver
   [ejercicios/02-primer-ingest.md](../ejercicios/02-primer-ingest.md)).

@@ -8,8 +8,8 @@ entrada en `wiki/log.md`.
 
 ## Pre-requisitos
 
-- Ejercicio 1 terminado (CLAUDE.md personalizado, plugins activos).
-- Claude Code corriendo en la raíz del repo.
+- Ejercicio 1 terminado (`AGENTS.md` personalizado, plugins activos).
+- Tu agente (Claude Code, Codex, OpenCode, Copilot, Cursor…) corriendo en la raíz del repo.
 
 ## Pasos
 
@@ -24,13 +24,13 @@ Léelo entero. Identifica:
 - ¿Qué herramientas se mencionan?
 - ¿Hay datos / cifras citables?
 
-### 2. Pídele a Claude que comente antes de escribir
+### 2. Pídele a tu agente que comente antes de escribir
 
 > Acabo de añadir `raw/ejemplo-articulo.md`. Léelo entero, identifica la
 > fuente original y proponme un plan: qué páginas crearías o actualizarías
 > en `wiki/`, agrupadas por tema (no por fichero). No escribas nada todavía.
 
-Claude responde con un plan tipo:
+El agente responde con un plan tipo:
 
 > Propongo:
 > 1. `wiki/conceptos/<concepto-1>.md` — definición + por qué importa.
@@ -52,7 +52,7 @@ Si te parece poco o demasiado:
 > actualizar `wiki/index.md` con una línea por página nueva, y añadir una
 > entrada `## [YYYY-MM-DD] ingest | …` a `wiki/log.md`.
 
-Claude crea las páginas. Revisa con `git diff` lo que ha escrito.
+El agente crea las páginas. Revisa con `git diff` lo que ha escrito.
 
 ### 5. Elimina el fichero raw
 

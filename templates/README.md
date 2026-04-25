@@ -18,9 +18,9 @@ Las plantillas usan los placeholders nativos del plugin:
 - `{{title}}` — nombre del fichero (sin extensión).
 - `{{date:YYYY-MM-DD}}` — fecha actual ISO.
 
-### Vía Claude Code
+### Vía tu agente (Claude Code, Codex, OpenCode, Copilot, Cursor…)
 
-Si Claude crea la página por ti durante una ingesta, le pides que parta de
+Si el agente crea la página por ti durante una ingesta, le pides que parta de
 `templates/<tipo>.md` y rellene los huecos. Así no se le olvida ningún campo
 del frontmatter ni la sección de *Páginas relacionadas*.
 
@@ -63,6 +63,6 @@ nuevo. El wiki prefiere convergencia sobre exhaustividad.
 Si añades un tipo nuevo (p.ej. `playbook` separado de `operativa`):
 
 1. Crea su plantilla en `templates/`.
-2. Añade el tipo a la lista en `CLAUDE.md` (sección *Formato de página*).
+2. Añade el tipo a la lista en `AGENTS.md` (sección *Formato de página*).
 3. Crea la carpeta `wiki/<tipo>/` o documenta dónde viven las páginas.
 4. Actualiza esta tabla.

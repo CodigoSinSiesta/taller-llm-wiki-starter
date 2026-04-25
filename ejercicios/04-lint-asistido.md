@@ -1,7 +1,7 @@
 # Ejercicio 4 — Lint asistido
 
-**Objetivo**: ejecutar una auditoría con Claude sobre tu wiki recién montado y
-obtener un plan corto de correcciones priorizado.
+**Objetivo**: ejecutar una auditoría con tu agente sobre tu wiki recién
+montado y obtener un plan corto de correcciones priorizado.
 
 **Tiempo**: 15 min.
 
@@ -15,7 +15,7 @@ deja como deberes).
 
 ## Pasos
 
-### 1. Pídele a Claude el lint
+### 1. Pídele a tu agente el lint
 
 > Haz un lint del wiki. Reporta como lista numerada con soluciones
 > sugeridas. Cubre:
@@ -39,7 +39,7 @@ deja como deberes).
 Hay 3 categorías típicas:
 
 - **Trivial**: tag mal escrito, falta `actualizado`, falta una línea en
-  `index.md`. Pide a Claude que lo corrija de una.
+  `index.md`. Pide a tu agente que lo corrija de una.
 - **Estructural**: una página huérfana porque le falta entrar en un MOC, un
   concepto nuevo que merece página. Decide si lo haces ahora o lo dejas en
   `wiki/operativa/ideas-pendientes.md`.

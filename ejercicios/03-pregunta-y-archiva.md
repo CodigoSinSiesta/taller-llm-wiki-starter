@@ -4,6 +4,9 @@
 después archivar la respuesta como página nueva o sección. Es el segundo
 mecanismo de crecimiento del wiki, al lado de la ingesta.
 
+Funciona indistintamente con cualquier agente (Claude Code, Codex, OpenCode,
+Copilot, Cursor…).
+
 **Tiempo**: 10-15 min.
 
 ## Pre-requisitos
@@ -25,7 +28,7 @@ Ejemplo (adáptalo a tu dominio):
 
 ### 2. Lee la respuesta y aporta contexto propio
 
-Probablemente Claude responda combinando lo que está en tus páginas con
+Probablemente el agente responda combinando lo que está en tus páginas con
 generalidades. Aporta tú algo que **sí** sabes y que no está en el wiki:
 
 > Mi caso real es que en `<contexto>` lo uso así: `<descripción>`. Eso no
@@ -44,6 +47,8 @@ generalidades. Aporta tú algo que **sí** sabes y que no está en el wiki:
 > página nueva) y añadir una entrada `## [YYYY-MM-DD] meta | Archivado de
 > respuesta: …` a `wiki/log.md`.
 
+
+
 ### 5. Commit
 
 ```sh
@@ -55,14 +60,14 @@ git commit -m "Archiva respuesta sobre <tema>"
 
 - [ ] Pregunta hecha al wiki con respuesta clara.
 - [ ] Aportaste al menos un dato propio que no estaba.
-- [ ] Decidiste página nueva vs sección razonando con Claude.
+- [ ] Decidiste página nueva vs sección razonando con tu agente.
 - [ ] Cambio aplicado y commit hecho.
 - [ ] Entrada `meta` en `wiki/log.md`.
 
 ## Por qué importa
 
 El wiki **no solo crece por ingesta de `raw/`**. Cada conversación útil con
-Claude es conocimiento candidato a guardarse. Si no lo archivas, lo pierdes
+tu agente es conocimiento candidato a guardarse. Si no lo archivas, lo pierdes
 en la próxima sesión. Convierte el archivado en costumbre desde el principio.
 
 Sigue (versión 120 min) con [04-lint-asistido.md](04-lint-asistido.md), o da
