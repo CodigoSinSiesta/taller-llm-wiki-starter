@@ -104,20 +104,37 @@ Este es el paso clave. Pídele al agente literalmente:
 >      públicas).
 >    Puedo también escoger una política mixta — p. ej. conservar todo
 >    salvo cuando indique lo contrario en una ingesta concreta.
-> 4. Si hay subdominios o categorías obvias dentro de mi finalidad
+> 4. **Frontera humano / agente** (decisión arquitectónica):
+>    ¿el agente puede tocar mis notas propias o solo el material que él
+>    sintetiza? Tres opciones:
+>    - **Vault único** (simple): un solo `wiki/` mezclado, el agente lo ve
+>      todo. Recomendado si empiezas y tu corpus es <50 páginas o
+>      mayoritariamente externas.
+>    - **Dos vaults — firewall completo**: separas tus notas humanas en otro
+>      repo distinto (este se queda como "LLM vault"). El agente nunca toca
+>      lo humano. Recomendado si ya llevas un Zettelkasten / journaling y
+>      quieres separación deontológica clara.
+>    - **Mismo vault, namespace separado** (recomendado para casos mixtos):
+>      `wiki/humano/` (solo lectura para el agente) + `wiki/llm/` (donde
+>      sintetiza). Disciplina de namespace al crear cada página, pero un
+>      solo repo que mantener.
+> 5. Si hay subdominios o categorías obvias dentro de mi finalidad
 >    (p. ej. si es estudio, qué asignaturas; si es trabajo, qué clientes o
 >    proyectos; si es hobby, qué facetas).
-> 5. Si hay alguna plantilla del catálogo `templates/opcionales/` que vaya
+> 6. Si hay alguna plantilla del catálogo `templates/opcionales/` que vaya
 >    a usar mucho.
-> 6. Cualquier convención propia que quiera mantener (idioma, naming, etc.).
+> 7. Cualquier convención propia que quiera mantener (idioma, naming, etc.).
 >
 > Cuando tengas mis respuestas, propóname:
 >
 > - **Qué subcarpetas** crear bajo `wiki/` (con nombres concretos basados en
->   mis respuestas, no genéricos).
+>   mis respuestas, no genéricos). Si elegí *namespace separado*, anida bajo
+>   `wiki/humano/` y `wiki/llm/`.
 > - **Qué plantillas opcionales** mover desde `templates/opcionales/` a
 >   `templates/` (si alguna). Si no hace falta ninguna, dilo.
 > - **Qué política de `raw/`** dejarás registrada en `AGENTS.md`.
+> - **Qué frontera humano/agente** dejarás registrada en `AGENTS.md`
+>   (vault único / firewall completo / namespace separado).
 > - **Cualquier ajuste** del vocabulario controlado de tags al inicio de
 >   `templates/README.md`.
 >
@@ -125,7 +142,10 @@ Este es el paso clave. Pídele al agente literalmente:
 > ejecutas y actualizas:
 > - La sección *Propósito* de `AGENTS.md` con mi finalidad concreta.
 > - La sección *Política de raw/* de `AGENTS.md` con la opción escogida.
-> - Borra ambas notas "Pendiente de rellenar" y la cita explicativa del
+> - La sección *Frontera humano/agente* de `AGENTS.md` con la opción
+>   escogida (vault único, firewall completo o namespace separado) y, si
+>   aplica firewall, el listado explícito de carpetas que NO debes tocar.
+> - Borra todas las notas "Pendiente de rellenar" y la cita explicativa del
 >   starter.
 > Documéntalo todo en `wiki/log.md` como una entrada
 > `## [YYYY-MM-DD] setup | Entrevista de finalidad`.
@@ -156,8 +176,9 @@ git commit -m "Setup inicial: AGENTS.md personalizado y estructura definida"
 - [ ] *Entrevista de finalidad* completada con tu agente.
 - [ ] `wiki/` tiene subcarpetas con nombres concretos a tu caso.
 - [ ] `templates/` tiene activadas las plantillas que vas a usar.
-- [ ] `AGENTS.md` con la sección *Propósito* rellenada y la *Política de
-      raw/* decidida (sin las notas "Pendiente de rellenar").
+- [ ] `AGENTS.md` con las secciones *Propósito*, *Política de raw/* y
+      *Frontera humano/agente* rellenadas (sin las notas "Pendiente de
+      rellenar").
 - [ ] Entrada `setup | Entrevista de finalidad` en `wiki/log.md`.
 - [ ] Commit inicial hecho.
 

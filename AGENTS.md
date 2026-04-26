@@ -133,6 +133,50 @@ en la conversación de ingesta".
 
 > ⏳ Pendiente de rellenar tras la *Entrevista de finalidad*.
 
+## Frontera humano / agente
+
+Decisión arquitectónica: ¿el agente puede tocar las notas propias del usuario
+(reflexión, journaling, ideas en bruto), o solo el material que él mismo
+sintetiza desde fuentes? La fragmentación de la memoria entre IDEs y CLIs ya
+es un problema; el wiki es la solución. Pero la frontera entre lo humano y lo
+sintetizado por LLM **se debe decidir de forma explícita**, no por accidente.
+
+Tres opciones, decididas en la Entrevista de finalidad del Ejercicio 1:
+
+- **Vault único** — un solo `wiki/` mezclado, el agente lo ve y modifica todo.
+  Lo más simple. Recomendado al empezar (<50 páginas) o si tu corpus es
+  mayoritariamente externo (artículos, papers, transcripciones).
+- **Firewall completo (dos vaults)** — las notas humanas viven en otro repo;
+  este queda como "LLM vault" puro. El agente nunca lee ni escribe el vault
+  humano. Recomendado si ya llevas un Zettelkasten / journaling y quieres
+  separación deontológica clara (saber siempre qué viene de tu cabeza y qué
+  del agente).
+- **Mismo vault, namespace separado** — `wiki/humano/` (zona del usuario,
+  el agente puede *leer* para enriquecer pero **no escribir**) +
+  `wiki/llm/` (zona del agente, lectura y escritura libres). Recomendado para
+  casos mixtos: una sola raíz, frontera explícita por subcarpeta.
+
+**Reglas que aplican al agente** según la opción escogida:
+
+- Si la política es **firewall completo**, este `AGENTS.md` debe declarar la
+  ruta absoluta (o relativa) del vault humano que NO debe abrirse. El agente
+  nunca lo lee, nunca lo escribe, nunca lo enlaza con `[[…]]` desde el LLM
+  vault.
+- Si la política es **namespace separado**, el agente puede leer páginas de
+  `wiki/humano/` (p. ej. para entender contexto cuando el usuario hace una
+  pregunta), pero **solo crea o modifica** páginas dentro de `wiki/llm/`.
+  Cuando el usuario quiera mover una síntesis del LLM a su zona humana, lo
+  hace él manualmente — el agente no traspasa la frontera por iniciativa.
+- Si la política es **vault único**, no hay frontera: el agente trabaja sobre
+  todo `wiki/` con normalidad.
+- Independientemente de la opción, el agente **siempre cita la fuente
+  original** (URL, libro, repo, conversación) y nunca un fichero `raw/`.
+
+> ⏳ Pendiente de rellenar tras la *Entrevista de finalidad*. Una vez
+> decidida, esta sección debe terminar con una frase explícita del estilo:
+> "Frontera humano/agente acordada 2026-04-26: **namespace separado** —
+> `wiki/humano/` solo lectura, `wiki/llm/` lectura y escritura".
+
 ## Plantillas
 
 **Antes de crear una página nueva, parte siempre de la plantilla del tipo
@@ -278,3 +322,7 @@ Cuando el usuario te pida hacer lint o auditar el wiki:
 - **No elimines ficheros de `raw/` por iniciativa propia** salvo que la
   política acordada sea "eliminar" o el usuario te lo pida explícitamente
   para un fichero concreto.
+- **Respeta la *Frontera humano/agente* acordada**: si está activa una
+  política de firewall o namespace separado, no escribas en zonas humanas
+  por iniciativa propia, aunque te parezca que la página encajaría mejor
+  ahí. Sugiere el movimiento al usuario y deja que él lo haga.
