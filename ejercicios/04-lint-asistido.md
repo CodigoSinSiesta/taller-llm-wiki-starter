@@ -41,15 +41,17 @@ Hay 3 categorías típicas:
 - **Trivial**: tag mal escrito, falta `actualizado`, falta una línea en
   `index.md`. Pide a tu agente que lo corrija de una.
 - **Estructural**: una página huérfana porque le falta entrar en un MOC, un
-  concepto nuevo que merece página. Decide si lo haces ahora o lo dejas en
-  `wiki/operativa/ideas-pendientes.md`.
+  concepto nuevo que merece página. Decide si lo haces ahora o lo anotas como
+  pendiente en una página de pendientes de tu wiki (ver paso 3).
 - **Externo**: data gap rellenable solo con búsqueda. Anótalo como TODO.
 
 ### 3. Aplica las correcciones triviales
 
 > Aplica las correcciones de los puntos 3 y 4 (frontmatter + tags). Para los
-> demás, anótalos en `wiki/operativa/ideas-pendientes.md` como una lista de
-> TODOs. Crea esa página desde `templates/operativa.md` si no existe.
+> demás, anótalos como lista de TODOs en una página de pendientes (p. ej.
+> `wiki/pendientes.md`, o `wiki/<tu-carpeta>/ideas-pendientes.md` si tienes esa
+> estructura). Créala desde `templates/nota.md` —o `templates/operativa.md` si
+> activaste esa plantilla opcional en el Ejercicio 1— si no existe.
 
 ### 4. Commit
 
@@ -62,8 +64,8 @@ git commit -m "Lint: corrijo frontmatter/tags y anoto pendientes"
 
 - [ ] Reporte de lint en pantalla con lista numerada.
 - [ ] Triviales aplicadas.
-- [ ] `wiki/operativa/ideas-pendientes.md` con los pendientes estructurales y
-      externos.
+- [ ] Una página de pendientes (p. ej. `wiki/pendientes.md`) con los
+      pendientes estructurales y externos.
 - [ ] Commit hecho.
 
 ## Por qué importa

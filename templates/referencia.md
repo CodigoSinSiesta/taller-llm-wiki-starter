@@ -12,7 +12,7 @@ tags: [referencia, <!-- articulos | casos | estudios | conferencia -->]
 
 <!-- Frase introductoria: quién publica, cuándo, por qué importa para el wiki. -->
 
-## Por qué importa para Código Sin Siesta
+## Por qué importa (para tu wiki)
 
 <!-- Conexión con conceptos/herramientas/proyectos. Usa [[wiki-links]]. -->
 

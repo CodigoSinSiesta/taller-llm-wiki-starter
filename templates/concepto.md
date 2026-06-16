@@ -18,8 +18,8 @@ tags: [<!-- agentes | sdd | mcp | evaluacion | seguridad | coste | contexto | me
 
 ## Por qué importa
 
-<!-- Conexión con los frentes del wiki: identidad, comunidad, proyectos, operativa.
-Evita repetir lo que ya está en otras páginas; enlaza con [[wiki-link]]. -->
+<!-- Conexión con los temas de tu wiki. Evita repetir lo que ya está en otras
+páginas; enlaza con [[wiki-link]]. -->
 
 ## <!-- Sección específica del concepto -->
 
