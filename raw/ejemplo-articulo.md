@@ -13,7 +13,8 @@ tags: [clippings, sample]
 > apunta a un artículo real. Trata el contenido como si fuera una fuente
 > externa real: tu trabajo en el ejercicio es identificar conceptos y
 > herramientas, crear páginas en `wiki/`, citar la fuente original (la URL
-> fictícia, en este caso) y eliminar este fichero al terminar.
+> fictícia, en este caso) y, al terminar, aplicar la *Política de raw/* que
+> acordaste en el Ejercicio 1 (por defecto: **conservar** el fichero).
 
 # Un segundo cerebro para developers
 

@@ -11,8 +11,8 @@ Copilot, Cursor…).
 
 ## Pre-requisitos
 
-- Ejercicios 1 y 2 terminados (al menos 1 página en `wiki/conceptos/` o
-  `wiki/herramientas/`).
+- Ejercicios 1 y 2 terminados (al menos 1 página creada en el Ejercicio 2,
+  en las subcarpetas que definiste en tu *Entrevista de finalidad*).
 
 ## Pasos
 

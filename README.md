@@ -84,7 +84,7 @@ taller-llm-wiki-starter/
 | Bloque | Tiempo | Contenido |
 |--------|--------|-----------|
 | 0 | 10 min | Bienvenida + el problema del conocimiento que se evapora |
-| 1 | 15 min | Anatomía del wiki: piezas universales (frontmatter, MOCs, `raw/` efímera, index, log) |
+| 1 | 15 min | Anatomía del wiki: piezas universales (frontmatter, MOCs, `raw/` con política configurable, index, log) |
 | 2 | 10 min | Plantillas universales + catálogo opcional + vocabulario de tags |
 | 3 | 15 min | Flujo de ingesta y regla de citación |
 | 4 | 25 min | **Hands-on 1** — [Setup + Entrevista de finalidad](ejercicios/01-setup.md) + primer commit |
