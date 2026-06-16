@@ -17,3 +17,6 @@
 
 # Outputs locales de herramientas externas (Graphify, etc.)
 .graphify/
+
+# OpenCode — credencial local del agente, nunca commitear
+.opencode/auth.json

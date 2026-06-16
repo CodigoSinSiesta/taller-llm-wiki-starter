@@ -1,0 +1,43 @@
+{
+  "name": "Taller LLM Wiki: tu baúl con tu agente de IA",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  "containerEnv": {
+    "LANG": "es_ES.UTF-8",
+    "LC_ALL": "es_ES.UTF-8",
+    "LC_CTYPE": "es_ES.UTF-8"
+  },
+
+  "onCreateCommand": "sudo bash -c 'grep -qxF \"es_ES.UTF-8 UTF-8\" /etc/locale.gen || echo \"es_ES.UTF-8 UTF-8\" >> /etc/locale.gen; locale-gen'",
+
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+
+  "postStartCommand": "echo 'Bienvenido al Taller LLM Wiki — tu baúl de conocimiento (Código Sin Siesta)'",
+
+  "forwardPorts": [],
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "sst-dev.opencode",
+        "yzhang.markdown-all-in-one"
+      ],
+      "settings": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "files.eol": "\n",
+        "terminal.integrated.env.linux": {
+          "LANG": "es_ES.UTF-8"
+        }
+      }
+    }
+  },
+
+  "remoteUser": "node",
+  "updateRemoteUserUID": false
+}
